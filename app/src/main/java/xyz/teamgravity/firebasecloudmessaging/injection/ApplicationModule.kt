@@ -1,11 +1,15 @@
 package xyz.teamgravity.firebasecloudmessaging.injection
 
+import android.app.Application
+import android.content.Context
+import android.content.SharedPreferences
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import xyz.teamgravity.firebasecloudmessaging.core.extension.Preferences
 import xyz.teamgravity.firebasecloudmessaging.data.remote.FirebaseCloudMessagingApi
 import xyz.teamgravity.firebasecloudmessaging.data.repository.FirebaseCloudMessagingRepository
 import javax.inject.Singleton
@@ -31,4 +35,8 @@ object ApplicationModule {
     @Singleton
     fun provideFirebaseCloudMessagingRepository(api: FirebaseCloudMessagingApi): FirebaseCloudMessagingRepository =
         FirebaseCloudMessagingRepository(api)
+
+    @Provides
+    @Singleton
+    fun provideSharedPreferences(app: Application): SharedPreferences = app.getSharedPreferences(Preferences.PREFS, Context.MODE_PRIVATE)
 }
