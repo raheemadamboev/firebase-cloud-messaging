@@ -1,4 +1,4 @@
-package xyz.teamgravity.firebasecloudmessaging.ui.theme
+package xyz.teamgravity.firebasecloudmessaging.presentation.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes
