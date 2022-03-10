@@ -5,6 +5,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.graphics.Color
 import android.os.Build
+import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.HiltAndroidApp
 import xyz.teamgravity.firebasecloudmessaging.core.constant.Notification
 
@@ -15,6 +16,7 @@ class App : Application() {
         super.onCreate()
 
         createNotificationChannel()
+        subscribeTopic()
     }
 
     private fun createNotificationChannel() {
@@ -30,5 +32,9 @@ class App : Application() {
             }
             getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
         }
+    }
+
+    private fun subscribeTopic() {
+        FirebaseMessaging.getInstance().subscribeToTopic(Notification.TOPIC)
     }
 }
