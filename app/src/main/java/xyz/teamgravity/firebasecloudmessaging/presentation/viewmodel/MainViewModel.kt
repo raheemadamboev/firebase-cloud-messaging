@@ -55,13 +55,14 @@ class MainViewModel @Inject constructor(
                             title = title,
                             message = message
                         ),
-                        to = Notification.TOPIC
+                        to = token.ifBlank { Notification.TOPIC }
                     )
                 )
 
                 if (response.isSuccessful) {
                     title = ""
                     message = ""
+                    token = ""
 
                     println("raheem: success!")
                 } else {
