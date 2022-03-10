@@ -7,10 +7,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import dagger.hilt.android.AndroidEntryPoint
 import xyz.teamgravity.firebasecloudmessaging.presentation.screen.MainScreen
 import xyz.teamgravity.firebasecloudmessaging.presentation.theme.FirebaseCloudMessagingTheme
 
+@AndroidEntryPoint
 class Main : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
