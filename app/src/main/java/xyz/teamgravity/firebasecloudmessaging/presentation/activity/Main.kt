@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
+import xyz.teamgravity.firebasecloudmessaging.presentation.screen.MainScreen
 import xyz.teamgravity.firebasecloudmessaging.presentation.theme.FirebaseCloudMessagingTheme
 
 class Main : ComponentActivity() {
@@ -18,6 +19,7 @@ class Main : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
+                    MainScreen()
                 }
             }
         }
