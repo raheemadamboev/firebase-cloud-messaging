@@ -60,6 +60,9 @@ class MainViewModel @Inject constructor(
                 )
 
                 if (response.isSuccessful) {
+                    title = ""
+                    message = ""
+
                     println("raheem: success!")
                 } else {
                     println("raheem: noooo!")
