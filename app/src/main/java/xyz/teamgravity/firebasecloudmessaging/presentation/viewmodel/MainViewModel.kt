@@ -44,7 +44,7 @@ class MainViewModel @Inject constructor(
     }
 
     fun onSendNotification() {
-        if (title.isBlank() && message.isBlank()) return
+        if (title.isBlank() || message.isBlank()) return
 
         job?.cancel()
         job = viewModelScope.launch {
