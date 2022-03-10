@@ -5,11 +5,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import xyz.teamgravity.firebasecloudmessaging.data.repository.FirebaseCloudMessagingRepository
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-
+    private val repository: FirebaseCloudMessagingRepository
 ) : ViewModel() {
 
     var title by mutableStateOf("")
